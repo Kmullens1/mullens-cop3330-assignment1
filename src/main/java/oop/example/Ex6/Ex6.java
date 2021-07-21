@@ -12,6 +12,7 @@
 package oop.example.Ex6;
 
 import java.util.Scanner;
+import java.time.LocalDate;
 
 public class Ex6 {
     public static void main(String[] args) {
@@ -44,6 +45,8 @@ public class Ex6 {
         int ageThen = Integer.parseInt(retire);
 
         int numOfYears = ageThen - ageNow;
+
+        int yearNow = getYear();
 
         System.out.println("You have " + numOfYears + " years left until you can retire.");
         System.out.println("It's " + ", so you can retire in " + "."); ////
