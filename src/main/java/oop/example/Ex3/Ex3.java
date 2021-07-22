@@ -19,9 +19,9 @@ public class Ex3 {
             Obi-Wan Kenobi says, "These aren't the droids you're looking for."
         Constraints
             Use a single output statement to produce this output, using appropriate
-            string-escapingtechniques for quotes.
+            string-escaping techniques for quotes.
             If your language supports string interpolation or string substitution,
-            don’t use it for this exercise.Use string concatenation instead.*/
+            don’t use it for this exercise. Use string concatenation instead.*/
 
         System.out.print("What is the quote? ");
 

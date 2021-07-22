@@ -4,6 +4,9 @@
  */
 package oop.example.Ex10;
 
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
 public class Ex10 {
     public static void main(String[] args) {
         //Self-Checkout
@@ -32,5 +35,41 @@ public class Ex10 {
         Be sure you explicitly convert input to numerical data before
         doing any calculations.
          */
+        //Could use a 'for' loop to reduce redundancy, but that's unnecessarily complicated for this example.
+
+        //Collecting Input
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the price of item 1: ");
+        double price1 = input.nextDouble();
+        System.out.print("Enter the quantity of item 1: ");
+        double quantity1 = input.nextDouble();
+
+        System.out.print("Enter the price of item 2: ");
+        double price2 = input.nextDouble();
+        System.out.print("Enter the quantity of item 2: ");
+        double quantity2 = input.nextDouble();
+
+        System.out.print("Enter the price of item 3: ");
+        double price3 = input.nextDouble();
+        System.out.print("Enter the quantity of item 3: ");
+        double quantity3 = input.nextDouble();
+
+        //Math operations and String building
+        double subtotal = (price1 * quantity1) + (price2 + quantity2) + (price3 * quantity3);
+
+        DecimalFormat df = new DecimalFormat("###.##");
+        String printSubtotal = "Subtotal: $" + df.format(subtotal) + "\n";
+        String printTax = "Tax: $" + "\n";
+        String printTotal = "Total: $";
+
+
+        //Printing out the output
+        System.out.print(printSubtotal);
+        System.out.print(printTax);
+        System.out.print(printTotal);
+
+
+        //FIX decimal places to 2
+        //Finish Tax and Total Calculations
     }
 }

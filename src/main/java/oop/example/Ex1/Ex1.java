@@ -20,9 +20,8 @@ public class Ex1 {
         Scanner input = new Scanner(System.in);
         String name = input.next();
 
-        System.out.print("Hello, ");
-        System.out.print(name);
-        System.out.print(", nice to meet you!");
+        String outputString = "Hello, " + name + ", nice to meet you!";
+        System.out.print(outputString);
     }
 }
 
