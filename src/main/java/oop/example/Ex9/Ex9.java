@@ -24,5 +24,6 @@ public class Ex9 {
         Ensure that you round up to the next whole number.
          */
 
+
     }
 }

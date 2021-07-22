@@ -12,6 +12,7 @@
 package oop.example.Ex6;
 
 import java.util.Scanner;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 public class Ex6 {
@@ -38,7 +39,7 @@ public class Ex6 {
         System.out.print("What is your current age? ");
         String current = input.next();
 
-        System.out.print("At what age would you like to retire?");
+        System.out.print("At what age would you like to retire? ");
         String retire = input.next();
 
         int ageNow = Integer.parseInt(current);
@@ -46,10 +47,15 @@ public class Ex6 {
 
         int numOfYears = ageThen - ageNow;
 
-        int yearNow = getYear();
+        //Calculate current year and retirement year
+        LocalDate currentDate = LocalDate.now();
+        DayOfWeek dow = currentDate.getDayOfWeek();
+        int yearNow = currentDate.getYear();
+
+        int yearThen = yearNow + numOfYears;
 
         System.out.println("You have " + numOfYears + " years left until you can retire.");
-        System.out.println("It's " + ", so you can retire in " + "."); ////
+        System.out.println("It's " + yearNow + ", so you can retire in " + yearThen + "."); ////
     }
 }
 
