@@ -4,7 +4,13 @@
  */
 package oop.example.Ex9;
 
+import java.util.Scanner;
+import java.lang.Math;
+import java.text.DecimalFormat;
+
 public class Ex9 {
+    static final double SQUARE_FEET_PER_GALLON = 350;
+
     public static void main(String[] args) {
 
         //Paint Calculator
@@ -24,6 +30,23 @@ public class Ex9 {
         Ensure that you round up to the next whole number.
          */
 
+        Scanner input = new Scanner(System.in);
+        System.out.print("What is the length of the room? ");
+        double length = input.nextDouble();
+
+        System.out.print("What is the width of the room? ");
+        double width = input.nextDouble();
+
+        //Calculations
+        double area = width * length;
+        double exactNumOfGallons = (area / SQUARE_FEET_PER_GALLON);
+        double roundedNumOfGallons = Math.ceil(exactNumOfGallons);
+
+        DecimalFormat df = new DecimalFormat("###.###");
+        System.out.print("You will need to purchase " + df.format(roundedNumOfGallons) +
+                " gallons of paint to cover " + df.format(area) + " square feet.\n" +
+                "Remember, you can’t buy a partial gallon of paint.\n" +
+                "You must round up to the next whole gallon.");
 
     }
 }
