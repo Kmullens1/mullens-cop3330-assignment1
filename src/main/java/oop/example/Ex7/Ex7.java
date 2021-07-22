@@ -5,11 +5,12 @@
 
 package oop.example.Ex7;
 
-//////////////////////////////////////////////////////////
-////////INCOMPLETE////////////////////////////////////////
-//////////////////////////////////////////////////////////
+import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class Ex7 {
+    static final double CONVERSION_FACTOR = 0.09290304;
+
     public static void main(String[] args) {
         //Area of a Rectangular Room
         /*When working in a global environment, you’ll have to present information
@@ -29,10 +30,24 @@ public class Ex7 {
         Constraints
             Keep the calculations separate from the output.
             Use a constant to hold the conversion factor.*/
-
+        Scanner input = new Scanner(System.in);
         System.out.print("What is the length of the room in feet? ");
-        System.out.print("What is the width of the room in feet?" );
-        System.out.print("You entered dimensions of " + " fee by " + " feet. ");
+        double length = input.nextDouble();
+
+        System.out.print("What is the width of the room in feet? " );
+        double width = input.nextDouble();
+
+        DecimalFormat df = new DecimalFormat("###.###");
+        System.out.print("You entered dimensions of " + df.format(length) + " feet by " + df.format(width) + " feet. \n");
+
+        //Calculate area in feet
+        double squareFeet = length * width;
+
+        //Formula for conversion: m2 = f2 × 0.09290304
+        double squareMeters = squareFeet * CONVERSION_FACTOR;
+
+        System.out.print("The area is\n" + df.format(squareFeet) + " square feet\n" + df.format(squareMeters) + " square meters");
+
     }
 }
 
