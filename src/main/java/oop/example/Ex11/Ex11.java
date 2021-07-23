@@ -44,7 +44,6 @@ public class Ex11 {
         double usd = numOfEuros * exchangeRate;
         String roundedUSD = String.format("%.2f", usd);
 
-        //FIXME replace hardcoded data
         System.out.print(numOfEuros + " euros at an exchange rate of " + exchangeRate + " is\n" +
                 roundedUSD + " U.S. dollars.");
 

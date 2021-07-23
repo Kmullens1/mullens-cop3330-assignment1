@@ -4,6 +4,7 @@
  */
 package oop.example.Ex12;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Ex12 {
@@ -39,11 +40,15 @@ public class Ex12 {
 
         System.out.print("Enter the rate of interest: ");
         double interestRate = input.nextDouble();
+        double rate = interestRate * 0.01;
 
         System.out.print("Enter the number of years: ");
-        double numberOfYears = input.nextDouble();
+        double numOfYears = input.nextDouble();
 
-        //FIXME = Replace Hardcoded numbers + Complete Calcuations
-        System.out.print("After " + 4 + " years at " + 4.3 + "%, the investment will be worth $" + 1758.);
+        double amountAccrued = principal * (1 + (rate * numOfYears));
+
+        DecimalFormat df = new DecimalFormat("###.###");
+        System.out.print("After " + df.format(numOfYears) + " years at " + interestRate
+                + "%, the investment will be worth $" + df.format(amountAccrued) + ".");
     }
 }
