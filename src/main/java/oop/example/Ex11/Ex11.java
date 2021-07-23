@@ -18,7 +18,7 @@ public class Ex11 {
 
         The formula for currency conversion is derived from
 
-            c_to / c_frame = rate
+            c_to / c_from = rate
         where
             c_to is the amount in U.S. dollars.
             c_from is the amount in euros.
@@ -41,9 +41,12 @@ public class Ex11 {
         System.out.print("What is the exchange rate? ");
         double exchangeRate = input.nextDouble();
 
+        double usd = numOfEuros * exchangeRate;
+        String roundedUSD = String.format("%.2f", usd);
+
         //FIXME replace hardcoded data
-        System.out.print(81 + " euros at an exchange rate of " + 1.2751 + " is\n" +
-                111.38 + " U.S. dollars.");
+        System.out.print(numOfEuros + " euros at an exchange rate of " + exchangeRate + " is\n" +
+                roundedUSD + " U.S. dollars.");
 
     }
 }
