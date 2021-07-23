@@ -7,6 +7,7 @@ package oop.example.Ex15;
 import java.util.Scanner;
 
 public class Ex15 {
+    static final String PASSWORD = "abc$123";
     public static void main(String[] args) {
         //Password Validation
         /*Passwords are validated by comparing a user-provided value
@@ -31,14 +32,17 @@ public class Ex15 {
         Use an if/else statement for this problem.
         Make sure the program is case sensitive.*/
 
-        //FIXME - Ask for username?
         Scanner input = new Scanner(System.in);
-        System.out.print("What is the password? ");
-        int password = input.nextInt(); //FIXME - should this be a String? (Is password just numbers?)
+        System.out.print("What is your username? ");
+        input.nextLine();
 
-        //FIXME - Add a if/then statement
-        System.out.print("I don't know you.");
-        System.out.print("Welcome!");
+        System.out.print("What is the password? ");
+        String password = input.nextLine();
+
+        if(password.equals(PASSWORD))
+            System.out.print("Welcome!");
+        else
+            System.out.print("I don't know you.");
 
     }
 }
