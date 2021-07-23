@@ -42,25 +42,24 @@ public class Ex14 {
         System.out.print("What is the order amount? ");
         double amount = input.nextDouble();
         double total = amount;
+        String subtotalSentence = "";
+        String taxSentence = "";
 
         System.out.print("What is the state? ");
         String state = input.next();
 
-        DecimalFormat df = new DecimalFormat("###.##");
-
+        //Should probably update to allow other spellings and type cases of the state, but not required
         if (state.equals("WI"))
         {
-            System.out.print("The subtotal is $" + df.format(amount) + ".\n");
+            String roundedAmount = String.format("%.2f", amount);
+            subtotalSentence = ("The subtotal is $" + roundedAmount + ".\n");
             double tax = (0.055 * amount);
-            System.out.print("The tax is $" + df.format(tax) + ".\n");
+            taxSentence = ("The tax is $" + tax + ".\n");
             total = amount + tax;
         }
 
 
-        System.out.print("The total is $" + df.format(total) + ".");
-
-        //FIXME - $10 FORMAT TO $10.00
-        //FIXME - SINGLE PRINT STATEMENT
+        System.out.print(subtotalSentence + taxSentence + "The total is $" + total + ".");
 
     }
 }
