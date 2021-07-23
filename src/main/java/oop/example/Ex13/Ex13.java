@@ -4,6 +4,7 @@
  */
 package oop.example.Ex13;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Ex13 {
@@ -44,17 +45,30 @@ public class Ex13 {
         double principal = input.nextDouble();
 
         System.out.print("What is the rate? ");
-        double rate = input.nextDouble();
+        double interestRate = input.nextDouble();
+        double rate = interestRate / 100;
 
         System.out.print("What is the number of years? ");
         double numOfYears = input.nextDouble();
 
         System.out.print("What is the number of times the interest is compounded per year? ");
-        double rateOfCompilation = input.nextDouble();
+        double periodsPerYear = input.nextDouble();
 
-        //FIXME - Replace hardcoded numbers and complete calculations
-        System.out.print("$" + 1500 +" invested at " + 4.3 +"% for " +
-                6 + " years compounded " + 4 + " times per year is $" + 1938.84 + ".");
+        //A = P(1 + r/n)^(n*t)
+        double base = (1 + (rate/periodsPerYear));
+        double exponent = periodsPerYear * numOfYears;
+        double exponential = Math.pow(base,exponent);
+        double amountAccrued = principal * exponential;
+
+        System.out.println(base);
+        System.out.println(exponent);
+        System.out.println(exponential);
+        System.out.println(amountAccrued);
+
+        DecimalFormat df = new DecimalFormat("###.##");
+        System.out.print("$" + df.format(principal) +" invested at " + interestRate +"% for " +
+                df.format(numOfYears) + " years compounded " + df.format(periodsPerYear)
+                + " times per year is $" + df.format(amountAccrued) + ".");
 
     }
 }

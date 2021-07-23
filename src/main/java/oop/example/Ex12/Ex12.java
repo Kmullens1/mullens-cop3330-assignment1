@@ -47,7 +47,7 @@ public class Ex12 {
 
         double amountAccrued = principal * (1 + (rate * numOfYears));
 
-        DecimalFormat df = new DecimalFormat("###.###");
+        DecimalFormat df = new DecimalFormat("###.##");
         System.out.print("After " + df.format(numOfYears) + " years at " + interestRate
                 + "%, the investment will be worth $" + df.format(amountAccrued) + ".");
     }
