@@ -4,6 +4,8 @@
  */
 package oop.example.Ex11;
 
+import java.util.Scanner;
+
 public class Ex11 {
     public static void main(String[] args) {
         //Currency Conversion
@@ -32,6 +34,16 @@ public class Ex11 {
         Ensure that fractions of a cent are rounded up to the next penny.
         Use a single output statement.*/
 
+        Scanner input = new Scanner(System.in);
+        System.out.print("How many euros are you exchanging? ");
+        double numOfEuros = input.nextDouble();
+
+        System.out.print("What is the exchange rate? ");
+        double exchangeRate = input.nextDouble();
+
+        //FIXME replace hardcoded data
+        System.out.print(81 + " euros at an exchange rate of " + 1.2751 + " is\n" +
+                111.38 + " U.S. dollars.");
 
     }
 }

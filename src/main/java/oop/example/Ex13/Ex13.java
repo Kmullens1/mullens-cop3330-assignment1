@@ -4,6 +4,8 @@
  */
 package oop.example.Ex13;
 
+import java.util.Scanner;
+
 public class Ex13 {
     public static void main(String[] args) {
 
@@ -36,6 +38,23 @@ public class Ex13 {
         by 100 in your program.
         Ensure that fractions of a cent are rounded up to the next penny.
         Ensure that the output is formatted as money.*/
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("What is the principal amount? ");
+        double principal = input.nextDouble();
+
+        System.out.print("What is the rate? ");
+        double rate = input.nextDouble();
+
+        System.out.print("What is the number of years? ");
+        double numOfYears = input.nextDouble();
+
+        System.out.print("What is the number of times the interest is compounded per year? ");
+        double rateOfCompilation = input.nextDouble();
+
+        //FIXME - Replace hardcoded numbers and complete calculations
+        System.out.print("$" + 1500 +" invested at " + 4.3 +"% for " +
+                6 + " years compounded " + 4 + " times per year is $" + 1938.84 + ".");
 
     }
 }

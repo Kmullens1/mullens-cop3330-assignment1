@@ -4,6 +4,8 @@
  */
 package oop.example.Ex22;
 
+import java.util.Scanner;
+
 public class Ex22 {
     public static void main(String[] args) {
         //Comparing Numbers
@@ -23,5 +25,16 @@ public class Ex22 {
         Constraint
         Write the algorithm manually. Don’t use a built-in function for
         finding the largest number in a list.*/
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the first number: ");
+        double firstNum = input.nextDouble();
+
+        System.out.print("Enter the second number: ");
+        double secondNum = input.nextDouble();
+
+        System.out.print("Enter the third number: ");
+        double thirdNum = input.nextDouble();
+
+        System.out.print("The largest number is " + 51 + "."); //FIXME - remove hardcoded number
     }
 }

@@ -4,6 +4,8 @@
  */
 package oop.example.Ex20;
 
+import java.util.Scanner;
+
 public class Ex20 {
     public static void main(String[] args) {
         //Multistate Sales Tax Calculator
@@ -33,5 +35,17 @@ public class Ex20 {
         Constraints
         Ensure that all money is rounded up to the nearest cent.
         Use a single output statement at the end of the program to display the program results.*/
+        Scanner input = new Scanner(System.in);
+        System.out.print("What is the order amount? ");
+        double orderAmount = input.nextDouble();
+
+        System.out.print("What state do you live in? ");
+        String state = input.next();
+
+        System.out.print("What county do you live in? ");
+        String county = input.next();
+
+        System.out.print("The tax is $" + 0.50 + "."); //FIXME - remove hardcoded numbers in these 2 lines
+        System.out.print("The total is $" + 10.50 + ".");
     }
 }

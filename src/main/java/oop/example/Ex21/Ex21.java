@@ -4,6 +4,8 @@
  */
 package oop.example.Ex21;
 
+import java.util.Scanner;
+
 public class Ex21 {
     public static void main(String[] args) {
         //Numbers to Names
@@ -25,6 +27,11 @@ public class Ex21 {
         Constraints
         Use a switch or case statement for this program.
         Use a single output statement for this program.*/
+        Scanner input = new Scanner(System.in);
+        System.out.print("Please enter the number of the month: ");
+        String month = input.next();
+
+        System.out.print("The name of the month is " + "."); //FIXME - add in the month to the sentence
 
     }
 }

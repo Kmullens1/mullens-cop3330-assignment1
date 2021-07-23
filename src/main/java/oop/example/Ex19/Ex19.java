@@ -4,6 +4,8 @@
  */
 package oop.example.Ex19;
 
+import java.util.Scanner;
+
 public class Ex19 {
     public static void main(String[] args) {
         //BMI Calculator
@@ -32,6 +34,19 @@ public class Ex19 {
         Constraint
         Ensure your program takes only numeric data. Don’t let the user
         continue unless the data is valid.*/
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("What is your weight? ");
+        double weight = input.nextDouble();
+
+        System.out.print("What is your height? ");
+        double height = input.nextDouble();
+
+        System.out.print("Your BMI is " + 19.5 + "."); //FIXME - remove hardcoded numbers
+
+        //FIXME - add in an if/else statement
+        System.out.print("You are within the ideal weight range.");
+        System.out.print("You are overweight. You should see your doctor.");
 
     }
 }

@@ -4,6 +4,8 @@
  */
 package oop.example.Ex14;
 
+import java.util.Scanner;
+
 public class Ex14 {
     public static void main(String[] args) {
 
@@ -34,6 +36,20 @@ public class Ex14 {
         Implement this program using only a simple if statement—don’t use an else clause.
         Ensure that all money is rounded up to the nearest cent.
         Use a single output statement at the end of the program to display the program results.*/
+        Scanner input = new Scanner(System.in);
+        System.out.print("What is the order amount? ");
+        double amount = input.nextDouble();
+
+        System.out.print("What is the state? ");
+        String state = input.next();
+
+        System.out.print("The subtotal is $" + 10.00 + ".");
+        System.out.print("The tax is $" + 0.55 + ".");
+        System.out.print("The total is $" + 10.55 + ".");
+
+        //FIXME to work for MN
+        //FIXME - remove hardcoded data and finish requirements
+
 
     }
 }

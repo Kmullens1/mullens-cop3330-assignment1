@@ -4,6 +4,8 @@
  */
 package oop.example.Ex15;
 
+import java.util.Scanner;
+
 public class Ex15 {
     public static void main(String[] args) {
         //Password Validation
@@ -28,6 +30,15 @@ public class Ex15 {
         Constraints
         Use an if/else statement for this problem.
         Make sure the program is case sensitive.*/
+
+        //FIXME - Ask for username?
+        Scanner input = new Scanner(System.in);
+        System.out.print("What is the password? ");
+        int password = input.nextInt(); //FIXME - should this be a String? (Is password just numbers?)
+
+        //FIXME - Add a if/then statement
+        System.out.print("I don't know you.");
+        System.out.print("Welcome!");
 
     }
 }

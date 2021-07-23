@@ -4,6 +4,8 @@
  */
 package oop.example.Ex23;
 
+import java.util.Scanner;
+
 public class Ex23 {
     public static void main(String[] args) {
         //Troubleshooting Car Issues
@@ -61,6 +63,14 @@ public class Ex23 {
         Constraint
         Ask only questions that are relevant to the situation
         and to the previous answers. Don’t ask for all inputs at once.*/
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Is the car silent when you turn the key? ");
+        String answer = input.next(); //FIXME - should this be a bool, String or char?
+
+        System.out.print("Are the battery terminals corroded? "); //FIXME - add hierarchy?
+
+        System.out.print("Replace cables and try again."); //FIXME - add if/then statements?
 
     }
 }

@@ -4,6 +4,8 @@
  */
 package oop.example.Ex12;
 
+import java.util.Scanner;
+
 public class Ex12 {
     public static void main(String[] args) {
         //Computing Simple Interest
@@ -31,5 +33,17 @@ public class Ex12 {
         input by 100 in your program.
         Ensure that fractions of a cent are rounded up to the next penny.
         Ensure that the output is formatted as money.*/
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the principal: ");
+        double principal = input.nextDouble();
+
+        System.out.print("Enter the rate of interest: ");
+        double interestRate = input.nextDouble();
+
+        System.out.print("Enter the number of years: ");
+        double numberOfYears = input.nextDouble();
+
+        //FIXME = Replace Hardcoded numbers + Complete Calcuations
+        System.out.print("After " + 4 + " years at " + 4.3 + "%, the investment will be worth $" + 1758.);
     }
 }

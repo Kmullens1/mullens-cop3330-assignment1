@@ -69,7 +69,7 @@ public class Ex10 {
         System.out.print(printTotal);
 
 
-        //FIX decimal places to 2
-        //Finish Tax and Total Calculations
+        //FIXME // Fix decimal places to 2
+        //FIXME Finish Tax and Total Calculations
     }
 }

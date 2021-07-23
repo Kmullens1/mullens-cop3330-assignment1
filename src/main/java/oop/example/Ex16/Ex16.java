@@ -4,6 +4,8 @@
  */
 package oop.example.Ex16;
 
+import java.util.Scanner;
+
 public class Ex16 {
     public static void main(String[] args) {
         //Legal Driving Age
@@ -29,6 +31,16 @@ public class Ex16 {
         Use a ternary operator to write this program. If your language
         doesn’t support a ternary operator, use a regular if/else statement,
         and still use a single output statement to display the message.*/
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("What is your age? ");
+        int age = input.nextInt();
+
+
+        //FIXME - Add if/then statement
+        System.out.print("You are not old enough to legally drive.");
+        System.out.print("You are old enough to legally drive.");
 
     }
 }

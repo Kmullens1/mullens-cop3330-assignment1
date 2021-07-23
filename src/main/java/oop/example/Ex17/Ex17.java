@@ -4,6 +4,8 @@
  */
 package oop.example.Ex17;
 
+import java.util.Scanner;
+
 public class Ex17 {
     public static void main(String[] args) {
         //Blood Alcohol Calculator
@@ -47,5 +49,23 @@ public class Ex17 {
 
         Constraint
         Prevent the user from entering non-numeric values.*/
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a 1 if you are male or a 2 if you are female: ");
+        int gender = input.nextInt(); //FIXME - should this variable be int, bool, or char?
+
+        System.out.print("How many ounces of alcohol did you have? ");
+        double ounces = input.nextDouble();
+
+        System.out.print("What is your weight, in pounds? ");
+        double weight = input.nextDouble();
+
+        System.out.print("How many hours has it been since your last drink? ");
+        double hours = input.nextDouble();
+
+        //FIXME - remove hardcoded data
+        System.out.print("Your BAC is " + 0.049323);
+        //FIXME - add in an if/then statement
+        System.out.print("It is legal for you to drive.");
+        System.out.print("It is not legal for you to drive.");
     }
 }
