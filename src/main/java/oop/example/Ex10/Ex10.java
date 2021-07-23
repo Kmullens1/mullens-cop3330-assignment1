@@ -8,6 +8,9 @@ import java.util.Scanner;
 import java.text.DecimalFormat;
 
 public class Ex10 {
+
+    static final double TAX_RATE = 0.055;
+
     public static void main(String[] args) {
         //Self-Checkout
         /*Working with multiple inputs and currency can introduce some
@@ -40,27 +43,39 @@ public class Ex10 {
         //Collecting Input
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the price of item 1: ");
-        double price1 = input.nextDouble();
+        String p1 = input.next();
         System.out.print("Enter the quantity of item 1: ");
-        double quantity1 = input.nextDouble();
+        String q1 = input.next();
 
         System.out.print("Enter the price of item 2: ");
-        double price2 = input.nextDouble();
+        String p2 = input.next();
         System.out.print("Enter the quantity of item 2: ");
-        double quantity2 = input.nextDouble();
+        String q2 = input.next();
 
         System.out.print("Enter the price of item 3: ");
-        double price3 = input.nextDouble();
+        String p3 = input.next();
         System.out.print("Enter the quantity of item 3: ");
-        double quantity3 = input.nextDouble();
+        String q3 = input.next();
+
+        //Be sure you explicitly convert input to numerical data before doing any calculations.
+        //(Weird way to do it, but okay...)
+        int price1 = Integer.parseInt(p1);
+        int quantity1 = Integer.parseInt(q1);
+        int price2 = Integer.parseInt(p2);
+        int quantity2 = Integer.parseInt(q2);
+        int price3 = Integer.parseInt(p3);
+        int quantity3 = Integer.parseInt(q3);
 
         //Math operations and String building
-        double subtotal = (price1 * quantity1) + (price2 + quantity2) + (price3 * quantity3);
+        double subtotal = (price1 * quantity1) + (price2 * quantity2) + (price3 * quantity3);
+        String roundedSubtotal = String.format("%.2f", subtotal);
+        String printSubtotal = "Subtotal: $" + roundedSubtotal + "\n";
 
-        DecimalFormat df = new DecimalFormat("###.##");
-        String printSubtotal = "Subtotal: $" + df.format(subtotal) + "\n";
-        String printTax = "Tax: $" + "\n";
-        String printTotal = "Total: $";
+        double tax = subtotal * TAX_RATE;
+        String printTax = "Tax: $" + tax + "\n";
+
+        double total = subtotal + tax;
+        String printTotal = "Total: $" + total;
 
 
         //Printing out the output
@@ -68,8 +83,5 @@ public class Ex10 {
         System.out.print(printTax);
         System.out.print(printTotal);
 
-
-        //FIXME // Fix decimal places to 2
-        //FIXME Finish Tax and Total Calculations
     }
 }

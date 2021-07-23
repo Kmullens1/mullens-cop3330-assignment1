@@ -22,6 +22,7 @@ public class Ex1 {
 
         String outputString = "Hello, " + name + ", nice to meet you!";
         System.out.print(outputString);
+
     }
 }
 
