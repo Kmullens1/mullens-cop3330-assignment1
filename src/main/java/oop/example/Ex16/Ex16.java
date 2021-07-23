@@ -37,10 +37,13 @@ public class Ex16 {
         System.out.print("What is your age? ");
         int age = input.nextInt();
 
+        String oldEnough = "You are old enough to legally drive.";
+        String tooYoung = "You are not old enough to legally drive.";
 
-        //FIXME - Add if/then statement
-        System.out.print("You are not old enough to legally drive.");
-        System.out.print("You are old enough to legally drive.");
+        String outcome = (age >= 16) ? oldEnough:tooYoung;
+
+        System.out.print(outcome);
+
 
     }
 }
