@@ -4,6 +4,7 @@
  */
 package oop.example.Ex17;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Ex17 {
@@ -62,10 +63,22 @@ public class Ex17 {
         System.out.print("How many hours has it been since your last drink? ");
         double hours = input.nextDouble();
 
-        //FIXME - remove hardcoded data
-        System.out.print("Your BAC is " + 0.049323);
-        //FIXME - add in an if/then statement
-        System.out.print("It is legal for you to drive.");
-        System.out.print("It is not legal for you to drive.");
+        double adr = -1500; //Randomly initialized to nonsense number
+        if(gender == 1)
+            adr = 0.73;
+        else if(gender == 2)
+            adr = 0.66;
+        else
+            System.out.print("Invalid Gender Entry");
+
+        //BAC = (A × 5.14 / W × r) − .015 × H
+        double BAC = (ounces * 5.14/weight * adr) - (0.015 * hours);
+
+        DecimalFormat df = new DecimalFormat("###.######");
+        System.out.print("\nYour BAC is " + df.format(BAC) + "\n");
+        if(BAC < 0.08)
+            System.out.print("It is legal for you to drive.");
+        else
+            System.out.print("It is not legal for you to drive.");
     }
 }
