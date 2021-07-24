@@ -27,11 +27,66 @@ public class Ex21 {
         Constraints
         Use a switch or case statement for this program.
         Use a single output statement for this program.*/
+
         Scanner input = new Scanner(System.in);
         System.out.print("Please enter the number of the month: ");
-        String month = input.next();
+        int monthNum = input.nextInt();
+        String monthAlpha;
 
-        System.out.print("The name of the month is " + "."); //FIXME - add in the month to the sentence
+        switch(monthNum) {
+            case 1:
+                monthAlpha = "January";
+                break;
+
+            case 2:
+                monthAlpha = "February";
+                break;
+
+            case 3:
+                monthAlpha = "March";
+                break;
+
+            case 4:
+                monthAlpha = "April";
+                break;
+
+            case 5:
+                monthAlpha = "May";
+                break;
+
+            case 6:
+                monthAlpha = "June";
+                break;
+
+            case 7:
+                monthAlpha = "July";
+                break;
+
+            case 8:
+                monthAlpha = "August";
+                break;
+
+            case 9:
+                monthAlpha = "September";
+                break;
+
+            case 10:
+                monthAlpha = "October";
+                break;
+
+            case 11:
+                monthAlpha = "November";
+                break;
+
+            case 12:
+                monthAlpha = "December";
+                break;
+
+            default :
+                monthAlpha = "ERROR";
+        }
+
+        System.out.print("The name of the month is " + monthAlpha + ".");
 
     }
 }
