@@ -66,11 +66,59 @@ public class Ex23 {
 
         Scanner input = new Scanner(System.in);
         System.out.print("Is the car silent when you turn the key? ");
-        String answer = input.next(); //FIXME - should this be a bool, String or char?
-
-        System.out.print("Are the battery terminals corroded? "); //FIXME - add hierarchy?
-
-        System.out.print("Replace cables and try again."); //FIXME - add if/then statements?
-
+        String answer = input.next();
+        if(answer.equals("y") || answer.equals("Y"))
+        {
+            System.out.print("Are the battery terminals corroded? ");
+            answer = input.next();
+            if(answer.equals("y") || answer.equals("Y"))
+            {
+                System.out.print("Clean terminals and try starting again.");
+            }
+            else if(answer.equals("n") || answer.equals("N"))
+            {
+                System.out.print("Replace cables and try again.");
+            }
+        }
+        else if(answer.equals("n") || answer.equals("N"))
+        {
+            System.out.print("Does the car make a slicking noise? ");
+            answer = input.next();
+            if(answer.equals("y") || answer.equals("Y"))
+            {
+                System.out.print("Replace the battery.");
+            }
+            else if (answer.equals("n") || answer.equals("N"))
+            {
+                System.out.print("Does the car crank up but fail to start? ");
+                answer = input.next();
+                if(answer.equals("y") || answer.equals("Y"))
+                {
+                    System.out.print("Check spark plug connections.");
+                }
+                else if (answer.equals("n") || answer.equals("N"))
+                {
+                    System.out.print("Does the engine start and then die? ");
+                    answer = input.next();
+                    if(answer.equals("y") || answer.equals("Y"))
+                    {
+                        System.out.print("Does your car have fuel injection? ");
+                        answer = input.next();
+                        if(answer.equals("y") || answer.equals("Y"))
+                        {
+                            System.out.print("Get it in for service.");
+                        }
+                        else if (answer.equals("n") || answer.equals("N"))
+                        {
+                            System.out.print("Check to ensure the choke is opening and closing.");
+                        }
+                    }
+                    else if (answer.equals("n") || answer.equals("N"))
+                    {
+                        System.out.print("This should not be possible.");
+                    }
+                }
+            }
+        }
     }
 }
