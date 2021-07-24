@@ -4,9 +4,12 @@
  */
 package oop.example.Ex18;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Ex18 {
+    static final double F_CONSTANT = 9/5;
+    static final double C_CONSTANT = 5/9;
     public static void main(String[] args) {
         //Temperature Converter
         /*You’ll often need to determine which part of a program is
@@ -35,15 +38,34 @@ public class Ex18 {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Press C to convert from Fahrenheit to Celsius.\n");
-        System.out.print("Press F to convert from Celsius to Fahrenheit.\n");
-        System.out.print("Your choice: ");
-        String choice = input.next(); //FIXME - Should this variable be int, bool, char or String?
+        System.out.print("Press C to convert from Fahrenheit to Celsius.\n" +
+                "Press F to convert from Celsius to Fahrenheit.\nYour choice: ");
+        String choice = input.next();
 
-        System.out.print("Please enter the temperature in Fahrenheit: ");
-        double temp = input.nextDouble();
+        double temp = -1500;            //Initialized to nonsense numbers
+        double convertedTemp = -1500;
+        String tempType = "ERROR";
+        if(choice.equals("c") || choice.equals("C"))
+        {
+            System.out.print("Please enter the temperature in Fahrenheit: ");
+            temp = input.nextDouble();
+            //C = (F − 32) × 5 / 9
+            convertedTemp = (temp - 32) * (C_CONSTANT);
+            tempType = "Celsius";
+        }
 
-        System.out.print("The temperature in Celsius is " + 0 + "."); //FIXME - remove hardcoded numbers
+        if(choice.equals("f") || choice.equals("F"))
+        {
+            System.out.print("Please enter the temperature in Celsius: ");
+            temp = input.nextDouble();
+            //F = (C × 9 / 5) + 32
+            convertedTemp = (temp * (F_CONSTANT)) + 32;
+            tempType = "Fahrenheit";
+        }
+
+        DecimalFormat df = new DecimalFormat("###.##");
+        System.out.print("The temperature in " + tempType + " is " + df.format(convertedTemp) + ".");
+
 
     }
 }

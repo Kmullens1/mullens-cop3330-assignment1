@@ -52,7 +52,7 @@ public class Ex17 {
         Prevent the user from entering non-numeric values.*/
         Scanner input = new Scanner(System.in);
         System.out.print("Enter a 1 if you are male or a 2 if you are female: ");
-        int gender = input.nextInt(); //FIXME - should this variable be int, bool, or char?
+        int gender = input.nextInt();
 
         System.out.print("How many ounces of alcohol did you have? ");
         double ounces = input.nextDouble();
