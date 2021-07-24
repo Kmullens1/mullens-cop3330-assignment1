@@ -4,6 +4,7 @@
  */
 package oop.example.Ex19;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Ex19 {
@@ -36,17 +37,26 @@ public class Ex19 {
         continue unless the data is valid.*/
 
         Scanner input = new Scanner(System.in);
-        System.out.print("What is your weight? ");
+        System.out.print("What is your weight (in pounds)? ");
         double weight = input.nextDouble();
 
-        System.out.print("What is your height? ");
+        System.out.print("What is your height (in inches)? ");
         double height = input.nextDouble();
 
-        System.out.print("Your BMI is " + 19.5 + "."); //FIXME - remove hardcoded numbers
+        DecimalFormat df = new DecimalFormat("###.#");
+        //bmi = (weight / (height × height)) * 703
+        double BMI = (weight / (height * height)) * 703;
+        System.out.print("Your BMI is " + df.format(BMI) + ".\n");
 
-        //FIXME - add in an if/else statement
-        System.out.print("You are within the ideal weight range.");
-        System.out.print("You are overweight. You should see your doctor.");
+        //If the BMI is between 18.5 and 25
+        if(BMI > 18.5 && BMI < 25)
+            System.out.print("You are within the ideal weight range.");
+        else if (BMI <= 18.5)
+            System.out.print("You are underweight. You should see your doctor.");
+        else if (BMI >= 25)
+            System.out.print("You are overweight. You should see your doctor.");
+        else
+            System.out.print("ERROR");
 
     }
 }
