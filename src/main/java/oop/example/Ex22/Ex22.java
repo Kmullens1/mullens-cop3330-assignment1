@@ -4,6 +4,7 @@
  */
 package oop.example.Ex22;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Ex22 {
@@ -11,7 +12,7 @@ public class Ex22 {
         //Comparing Numbers
         /*Comparing one input to a known value is common enough,
         but you’ll often need to process a collection of inputs.
-        rite a program that asks for three numbers. Check first
+        write a program that asks for three numbers. Check first
         to see that all numbers are different. If they’re not
         different, then exit the program. Otherwise, display
         the largest number of the three.
@@ -25,6 +26,7 @@ public class Ex22 {
         Constraint
         Write the algorithm manually. Don’t use a built-in function for
         finding the largest number in a list.*/
+
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the first number: ");
         double firstNum = input.nextDouble();
@@ -34,7 +36,20 @@ public class Ex22 {
 
         System.out.print("Enter the third number: ");
         double thirdNum = input.nextDouble();
+        double max = firstNum;
 
-        System.out.print("The largest number is " + 51 + "."); //FIXME - remove hardcoded number
+        if(firstNum != secondNum && secondNum != thirdNum && firstNum != thirdNum)
+        {
+            if(firstNum < secondNum)
+            {
+                max = secondNum;
+                if(secondNum < thirdNum)
+                    max = thirdNum;
+            }
+            else if(firstNum < thirdNum)
+                max = thirdNum;
+        }
+        DecimalFormat df = new DecimalFormat("###.###");
+        System.out.print("The largest number is " + df.format(max) + ".");
     }
 }
